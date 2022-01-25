@@ -3,8 +3,8 @@ const teclas = {UP: 38,DOWN: 40,LEFT: 37,RIGHT: 39}
 
 let areaCanva = document.getElementById("dibujoFlechas");
 let papel = areaCanva.getContext("2d");
-let x = 300;
-let y = 300;
+let x = 250;
+let y = 250;
 let estado;
 
 dibujarLinea("red", x-1, y-1, x+1, y+1, papel);
