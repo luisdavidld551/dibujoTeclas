@@ -1,0 +1,13 @@
+body {
+    background-color: #AAAAFF;
+    font-family: Helvetica;
+}
+
+canvas {
+    background-color: #b8b8cf;
+}
+
+p{
+    color: rgb(216, 23, 23);
+    font-size: 20px;
+}
