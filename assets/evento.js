@@ -1,39 +1,15 @@
 
-/*
-    arriba 38
-    abajo 40
-    derecha 39
-    izquierda 37
+const teclas = {UP: 38,DOWN: 40,LEFT: 37,RIGHT: 39}
 
-    if(evento.keyCode == teclas.UP){
-        console.log("Arriba2");
-    }
-    if(evento.keyCode == teclas.DOWN){
-        console.log("Abajo2");
-    }
-    if(evento.keyCode == teclas.LEFT){
-        console.log("Izquierda2");
-    }
-    if(evento.keyCode == teclas.RIGHT){
-        console.log("Derecha2");
-    }
-*/
-var teclas = {
-    UP: 38,
-    DOWN: 40,
-    LEFT: 37,
-    RIGHT: 39
-}
-
-document.addEventListener("keydown", dibujarTeclado);
-var areaCanva = document.getElementById("dibujoFlechas");
-var papel = areaCanva.getContext("2d");
-var x = 300;
-var y = 300;
+let areaCanva = document.getElementById("dibujoFlechas");
+let papel = areaCanva.getContext("2d");
+let x = 300;
+let y = 300;
+let estado;
 
 dibujarLinea("red", x-1, y-1, x+1, y+1, papel);
 
-function dibujarLinea(color, mover_x, mover_y, linea_x, linea_y, lienzo) {
+function dibujarLinea (color, mover_x, mover_y, linea_x, linea_y, lienzo) {
     lienzo.beginPath();
     lienzo.strokeStyle = color;
     lienzo.lineWidth = 3;
@@ -43,9 +19,9 @@ function dibujarLinea(color, mover_x, mover_y, linea_x, linea_y, lienzo) {
     lienzo.closePath();
 }
 
-function dibujarTeclado(evento) {
-    var colorCanvas = "blue";
-    var mover = 1;
+const dibujarTeclado = (evento) => {
+    let colorCanvas = "blue";
+    let mover = 1;
     switch (evento.keyCode) {
         case teclas.UP:
             dibujarLinea(colorCanvas, x, y, x, y - mover, papel);
@@ -69,27 +45,24 @@ function dibujarTeclado(evento) {
     }
 }
 
-document.addEventListener("mousemove",dibujarMouse);
-document.addEventListener("mousedown",dibujarMouseDown);
-document.addEventListener("mouseup",dibujarMouseUp);
-
-var x;
-var y;
-var estado;
-
-function dibujarMouseDown() {
+const dibujarMouseDown = () =>{
     estado = 1;
 }
-function dibujarMouseUp() {
+
+const dibujarMouseUp = ()=> {
     estado = 0;
 }
 
-function dibujarMouse(evento) {
+const dibujarMouse = (evento) => {
     if(estado == 1){
         //-console.log(evento);
         x = evento.layerX;
         y = evento.layerY;
         dibujarLinea("red", x, y, x+2, y+3, papel);
     }
-    
 }
+
+document.addEventListener("keydown", dibujarTeclado);
+document.addEventListener("mousemove",dibujarMouse);
+document.addEventListener("mousedown",dibujarMouseDown);
+document.addEventListener("mouseup",dibujarMouseUp);
