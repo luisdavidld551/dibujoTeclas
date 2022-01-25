@@ -1,13 +1,13 @@
 body {
-    background-color: #AAAAFF;
+    background-color: #92e9f5;
     font-family: Helvetica;
 }
 
 canvas {
-    background-color: #b8b8cf;
+    background-color: #e78637;
 }
 
 p{
-    color: rgb(216, 23, 23);
+    color: #d81717;
     font-size: 20px;
 }
