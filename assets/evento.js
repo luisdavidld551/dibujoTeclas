@@ -66,3 +66,6 @@ document.addEventListener("keydown", dibujarTeclado);
 document.addEventListener("mousemove",dibujarMouse);
 document.addEventListener("mousedown",dibujarMouseDown);
 document.addEventListener("mouseup",dibujarMouseUp);
+
+document.addEventListener('touchstart', dibujarMouseDown);
+document.addEventListener('touchmove', dibujarMouse);
