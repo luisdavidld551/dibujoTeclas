@@ -62,6 +62,16 @@ const dibujarMouse = (evento) => {
     }
 }
 
+const dibujarTouch = (event) => {
+    event.preventDefault();
+    if(event.changedTouches != undefined){
+        //-console.log(evento);
+        x = event.changedTouches[0].pageX - correccionX;
+        y = event.changedTouches[0].pageY - correccionY;
+        dibujarLinea("red", x, y, x+2, y+3, papel);
+    }
+}
+
 document.addEventListener("keydown", dibujarTeclado);
 document.addEventListener("mousemove",dibujarMouse);
 document.addEventListener("mousedown",dibujarMouseDown);
