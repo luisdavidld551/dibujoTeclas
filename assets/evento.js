@@ -6,6 +6,9 @@ let papel = areaCanva.getContext("2d");
 let x = 250;
 let y = 250;
 let estado;
+let posicion = areaCanva.getBoundingClientRect()
+correccionX = posicion.x;
+correccionY = posicion.y;
 
 dibujarLinea("red", x-1, y-1, x+1, y+1, papel);
 
@@ -77,5 +80,5 @@ document.addEventListener("mousemove",dibujarMouse);
 document.addEventListener("mousedown",dibujarMouseDown);
 document.addEventListener("mouseup",dibujarMouseUp);
 
-document.addEventListener('touchstart', dibujarMouseDown);
-document.addEventListener('touchmove', dibujarMouse);
+//document.addEventListener('touchstart', dibujarMouseDown);
+document.addEventListener('touchmove', dibujarTouch);
