@@ -1,7 +1,7 @@
 
 const teclas = {UP: 38,DOWN: 40,LEFT: 37,RIGHT: 39}
 
-let areaCanva = document.getElementById("dibujoFlechas");
+let areaCanva = document.querySelector('#dibujoFlechas');
 let papel = areaCanva.getContext("2d");
 let x = 250;
 let y = 250;
